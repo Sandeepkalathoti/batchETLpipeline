@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "batch-etl-pipeline"
+version = "0.1.0"
+description = "Daily batch ETL pipeline using MySQL, Apache Airflow, and Snowflake"
+requires-python = ">=3.10"
+
+dependencies = [
+    "apache-airflow==2.9.1",
+    "mysql-connector-python==9.0.0",
+    "snowflake-connector-python==3.12.2",
+    "pytest==8.3.2",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
